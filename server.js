@@ -19,7 +19,11 @@ const app = express();
 app.use(express.json());
 
 // Enable CORS
-app.use(cors());
+app.use(cors({
+  origin: ['https://snack.expo.dev'],
+  credentials: true
+}));
+
 
 // Mount routers
 app.use('/api/v1/auth', auth);
